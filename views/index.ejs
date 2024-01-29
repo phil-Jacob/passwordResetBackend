@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=form, initial-scale=1.0">
+    <title>PasswordReset</title>
+    <script>
+        console.log("hello");
+        var status = '<%-JSON.stringify(status) %>';
+        if (JSON.parse(status) == "verified"){
+            if (confirm("Do you want to login?")){
+                window.location.href = "http://localhost:3000/";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <form action="" method="post">
+        <strong>Enter New Password: </strong>
+        <input type="password" name="password" class="newPassword" placeholder="Enter New Password" id="password"><br>
+        <strong>Confirm New Password: </strong>
+        <input type="password" name="confirmPassword" placeholder="Confirm Password" id="confirm-password"><br>
+        <button class="button" type="submit" >Confirm</button>
+    </form>
+</body>
+</html>
