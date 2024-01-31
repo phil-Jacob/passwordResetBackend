@@ -96,12 +96,12 @@ app.post("/forgot-password", async(req, res) => {
     } 
     const secret = JWT_SECRET + oldUser.password;
     const token = jwt.sign({ email: oldUser.email, id: oldUser._id}, secret, {expiresIn: "5m"});
-    const link = `http://localhost:5000/reset-password/${oldUser._id}/${token}`;
+    const link = `https://password-resetbackend.onrender.com/${oldUser._id}/${token}`;
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-          user: 'jasonjoe777@gmail.com',
-          pass: 'qfqm wofw eupu rqon'
+          user: 'jack.joe1817@gmail.com',
+          pass: 'mdda ooyj twpv nwjn'
         }
       });
       
@@ -109,7 +109,7 @@ app.post("/forgot-password", async(req, res) => {
         from: 'jack.joe1817@gmail.com',
         to: email,
         subject: 'Password Reset Link',
-        text : 'Click this link to reset your password',
+        text: 'Click this link to reset your password',
         text: link,
       };
       
