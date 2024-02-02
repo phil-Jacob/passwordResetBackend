@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 app.use(express.json());
 const cors = require("cors");
 app.use(cors({
-    origin: "https://password-reset-backend-vig5.onrender.com"
+    origin: "https://password-resetbackend.onrender.com"
 }));
 app.options('*', cors());
 // cors orgin referece or jwt token origin: "*"
