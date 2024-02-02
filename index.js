@@ -3,7 +3,11 @@ const app = express();
 const mongoose = require("mongoose");
 app.use(express.json());
 const cors = require("cors");
-app.use(cors());
+app.use(cors({
+    origin: "https://password-reset-backend-vig5.onrender.com"
+}));
+app.options('*', cors());
+// cors orgin referece or jwt token origin: "*"
 const bcrypt = require("bcryptjs");
 app.set("view engine","ejs");
 app.use(express.urlencoded({ extended: false }));
