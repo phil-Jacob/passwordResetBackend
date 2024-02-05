@@ -4,10 +4,11 @@ const mongoose = require("mongoose");
 app.use(express.json());
 const cors = require("cors");
 app.use(cors({
-    origin: "https://password-resetbackend.onrender.com"
+    origin: "https://delicate-fox-eb8698.netlify.app"
 }));
-app.options('*', cors());
+
 // cors orgin referece or jwt token origin: "*"
+
 const bcrypt = require("bcryptjs");
 app.set("view engine","ejs");
 app.use(express.urlencoded({ extended: false }));
@@ -100,7 +101,7 @@ app.post("/forgot-password", async(req, res) => {
     } 
     const secret = JWT_SECRET + oldUser.password;
     const token = jwt.sign({ email: oldUser.email, id: oldUser._id}, secret, {expiresIn: "5m"});
-    const link = `https://password-resetbackend.onrender.com/${oldUser._id}/${token}`;
+    const link = `https://delicate-fox-eb8698.netlify.app/${oldUser._id}/${token}`;
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
