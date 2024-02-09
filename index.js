@@ -21,10 +21,9 @@ const JWT_SECRET = "asdewjiskc879c^&*(94zc6['/okwdfdryeui9575/+_)(*846cz5$%^609(
 const mongUrl = "mongodb+srv://Jacob:jacob@cluster0.pdornlr.mongodb.net/"
 
 mongoose.connect(mongUrl,{  
-    useNewUrlParser:true
 })
 .then(() => {
-    console.log("connected to database");
+    console.log("connected to Database");
 })
 .catch((e)=> console.log(e)); 
 
