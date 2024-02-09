@@ -3,9 +3,22 @@ const app = express();
 const mongoose = require("mongoose");
 app.use(express.json());
 const cors = require("cors");
-app.use(cors({
-    origin: "https://delicate-fox-eb8698.netlify.app"
-}));
+// app.use(cors({
+//     origin: "https://delicate-fox-eb8698.netlify.app"
+// }));
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader(
+      "Access-Control-Allow-Methods",
+      "OPTIONS, GET, POST, PUT, PATCH, DELETE"
+    );
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    if (req.method === "OPTIONS") {
+      return res.sendStatus(200);
+    }
+    next();
+  });
+
 
 // cors orgin referece or jwt token origin: "*"
 
