@@ -31,7 +31,7 @@ var nodemailer = require('nodemailer');
 
 const JWT_SECRET = "asdewjiskc879c^&*(94zc6['/okwdfdryeui9575/+_)(*846cz5$%^609(c84{\c6c1sc6s";
 
-const mongUrl = "mongodb+srv://Jacob:jacob@cluster0.pdornlr.mongodb.net/"
+const mongUrl = "mongodb+srv://Jacob:sampletest@cluster0.pdornlr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 mongoose.connect(mongUrl,{  
 })
