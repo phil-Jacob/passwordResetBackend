@@ -20,7 +20,7 @@ app.use(cors({
 //   });
 
 
-// cors orgin referece or jwt token origin: "*"
+// cors origin reference or jwt token origin: "*"
 
 const bcrypt = require("bcryptjs");
 app.set("view engine","ejs");
@@ -62,7 +62,7 @@ app.post("/register", async(req,res)=>{
         }); 
         res.send({status:"ok"});
     } catch (error) {
-        res.send({status:"error"});
+        res.send({error});
     }
 });
 
